@@ -1,0 +1,110 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* About Container */
+.aboutPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  min-height: 90vh;
+}
+.about-container {  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.about-desc h1{
+  font-size: 2.5rem;
+  color: #ff9900;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.about-desc h3{
+  font-size: 1.5rem;
+  color: #ff6600e0;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* About Image */
+.about-img {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+/* About Description */
+.about-desc {
+  flex: 2;
+  max-width: 600px;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Buttons Section - Now at the Bottom */
+.abt-btns {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px; /* Adjust spacing */
+}
+
+/* Buttons */
+.btn {
+  text-decoration: none;
+  background: #ff9800;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+  }
+
+  .about-desc {
+      text-align: center;
+  }
+  
+  .about-img img {
+      max-width: 80%;
+  }
+
+  .abt-btns {
+      flex-direction: column;
+  }
+}

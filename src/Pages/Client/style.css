@@ -1,0 +1,51 @@
+.clients-container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .clients-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-bottom: 30px;
+  }
+  
+  .clients-slider {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .clients-track {
+    display: flex;
+    gap: 40px; /* Increased spacing between images */
+    animation: scroll 15s linear infinite;
+  }
+  
+  .client-logo {
+    height: 250px;  /* Increased height */
+    width: auto;
+    display: inline-block;
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .client-logo {
+      height: 150px; /* Smaller images for mobile */
+    }
+  }
+  

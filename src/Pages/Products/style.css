@@ -1,0 +1,85 @@
+/* General Styling */
+.products-page {
+    max-width: 100vw;
+    margin: 0px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient( rgba(175, 134, 57, 0.415), white);
+}
+.products-page .our-products {
+    font-size: 40px;
+    font-weight: bolder;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Product Card */
+.product-card {
+    background: linear-gradient(135deg, #d70b0b, #d52202);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: #fff;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Product Image */
+.product-image {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+/* Product Name */
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .products-page {
+        padding: 15px;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-name {
+        font-size: 16px;
+    }
+}
