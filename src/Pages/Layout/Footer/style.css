@@ -103,12 +103,19 @@
     color: #888;
 }
 
+hr{
+    border: 0;
+    height: 1px;
+    background: #333;
+    margin: 10px 0px 0px 0px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
-        text-align: center;
-        align-items: center;
+        text-align: left;
+        align-items: left;
     }
 
     .location-section, .map-container, .abtus {
@@ -122,10 +129,13 @@
     }
 
     .location-section {
-        text-align: center;
+        text-align: left;
     }
 
     .abtus {
-        text-align: center;
+        text-align: left;
+    }
+    .footer-text{
+        margin-bottom: 50px;
     }
 }

@@ -9,7 +9,7 @@ const AboutPage = () => {
     <>
       <Header />
       <div className="aboutPage">
-        <div className="about-container animate__animated animate__zoomInUp">
+        <div className="about-container">
           <div className="about-img">
             <img src="./smagency-images/AboutPage-Images/logo.png" alt="Company Logo" />
           </div>

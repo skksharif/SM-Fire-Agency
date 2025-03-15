@@ -61,8 +61,8 @@ const HomePage = () => {
 
         <div className="certification-box">
           <div className="cert-content">
-            <img className="cert-img animate__animated animate__slideInLeft" src="./smagency-images/HomePage-Images/certi.png" alt="Sree Mohith Agency Certificate" />
-            <p className="cert-desc animate__animated animate__slideInRight">
+            <img className="cert-img" src="./smagency-images/HomePage-Images/certi.png" alt="Sree Mohith Agency Certificate" />
+            <p className="cert-desc">
               Sree Mohith Agency, an ISO 9001:2015 certified company, is a leading provider of Fire Hydrant Systems, Sprinkler Systems, and Industrial Safety Equipment. 
               The company acts as a Dealer, Distributor, Supplier, Trader, and Service Provider, partnering with reputed manufacturers. With years of experience, 
               Sree Mohith Agency delivers reliable safety solutions that meet industry standards. Their products ensure high levels of safety for commercial and industrial use. 
