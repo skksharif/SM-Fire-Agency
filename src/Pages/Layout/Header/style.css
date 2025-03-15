@@ -1,62 +1,54 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .navbar {
-  background-color: black;
-  color: aliceblue;
-  width: 100%;
-  padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  position: relative;
-}
-
-.logoHeader {
-  display: flex;
-  align-items: center;
-}
-
-.logoHeader h2{
-  color: white;
+  border-bottom: 0.3px solid #d0d0d0;
+  margin-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.805);
+  backdrop-filter: blur(10px);
 }
 
 #logo {
-  height: 70px;
-  width: 70px;
-  margin-right: 10px;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
 }
 
 .menu-icon {
   display: none;
   cursor: pointer;
 }
-
+.navContents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 13px;
+}
 .navContents ul {
   display: flex;
+  justify-content: center;
+  align-items: center;
   list-style: none;
-  padding: 10px;
 }
 
 .navContents ul li {
-  margin: 0 15px;
-  font-size: larger;
-  padding: 5px 10px;
+  margin: 0 px;
+  font-size: 16px;
+  padding: 5px 15px;
   transition: 0.3s;
 }
 
 .navContents ul li a {
   text-decoration: none;
-  color: white;
+  color: rgb(124, 0, 0);
   transition: 0.3s;
 }
 
 .navContents ul li.active {
   font-weight: bold;
-  border-bottom: 2px solid white;
 }
 
 /* Responsive Styles */

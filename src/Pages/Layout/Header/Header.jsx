@@ -7,39 +7,22 @@ import 'animate.css';
 const Header = () => {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [logoText, setLogoText] = useState("SREE MOHITH AGENCY");
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setLogoText("");
-      } else {
-        setLogoText("SREE MOHITH AGENCY");
-      }
-    };
-
-    handleResize(); // Check on initial load
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <nav className="navbar">
-      <div className="logoHeader animate__animated animate__fadeInUp">
-        <img src="./smagency-images/HomePage-images/logo.png" alt="SMAGENCY" id="logo" />
-        <h2>{logoText}</h2>
+      <div className="logoHeader">
+         <Link to='/'><img src="./smagency-images/HomePage-images/logo.png" alt="SMAGENCY" id="logo" /></Link>
       </div>
 
       <div className="menu-icon" onClick={toggleMenu}>
         {menuOpen ? <FiX size={30} color="white" /> : <FiMenu size={30} color="white" />}
       </div>
 
-      <div className={`navContents ${menuOpen ? "active" : ""} animate__animated animate__slideInDown`}>
+      <div className={`navContents ${menuOpen ? "active" : ""} `}>
         <ul>
           <li className={location.pathname === "/" ? "active" : ""}>
             <Link to="/" onClick={toggleMenu}>Home</Link>
