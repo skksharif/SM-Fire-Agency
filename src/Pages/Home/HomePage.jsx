@@ -46,15 +46,15 @@ const HomePage = () => {
     <>
         <Header />
         <div className="carousel">
-          <button className="carousel-btn prev" onClick={prevSlide}>❮</button>
           <div className="carousel-inner">
             {images.map((img, index) => (
               <img
-                key={index}
-                src={img}
-                alt={`Slide ${index + 1}`}
-                className={index === currentIndex ? "active" : ""}
+              key={index}
+              src={img}
+              alt={`Slide ${index + 1}`}
+              className={`carousel-img ${index === currentIndex ? "animate__animated animate__fadeIn active" : ""}`}
               />
+            
             ))}
           </div>
         </div>
@@ -75,7 +75,7 @@ const HomePage = () => {
           <h1 className="stats-heading">
             Fire Safety Products Dealers, Distributors, Suppliers, Traders, Sales, and Services Provider
           </h1>
-          <div className="stats-container animate__animated animate__zoomIn">
+          <div className="stats-container">
             <div className="stat-box">
               <FaUsers className="stat-icon" />
               <h2>170</h2>

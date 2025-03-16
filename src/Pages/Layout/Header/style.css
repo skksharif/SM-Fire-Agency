@@ -1,3 +1,7 @@
+.header{
+  position: static;
+}
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -5,22 +9,20 @@
   border-bottom: 0.3px solid #d0d0d0;
   margin-bottom: 10px;
   position: sticky;
+  width: 100%;
   top: 0;
-  z-index: 999;
-  background-color: rgba(255, 255, 255, 0.373);
+  z-index: 5000;
+  background-color: rgba(255, 0, 0, 0.142);
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease-in-out;
 }
+
 
 #logo {
   height: 60px;
   width: 60px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
-}
-
-#logo:hover {
-  transform: rotate(360deg) scale(1.1);
 }
 
 .menu-icon {
@@ -49,22 +51,16 @@
   transition: background-color 0.3s, transform 0.3s ease-in-out;
 }
 
-.navContents ul li:hover {
-  background-color: rgba(255, 0, 0, 0.8);
-  color: #fff;
-  transform: scale(1.1);
-  border-radius: 20px;
-}
-
 .navContents ul li a {
   text-decoration: none;
-  color: rgb(124, 0, 0);
+  color: red;
   transition: color 0.3s ease-in-out;
 }
-
 .navContents ul li.active {
   font-weight: bold;
   transform: scale(1.1);
+  border-bottom: 2px solid red;
+  transition: transform 3s ease-in-out, border-bottom 0.3s ease-in-out, font-weight 0.3s ease-in-out;
 }
 .mobile-navbar {
   display: none;
@@ -72,8 +68,9 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
   .navbar {
-    display: none; /* Hide top navbar on small screens */
+    display: none;
   }
 
   .mobile-navbar {
@@ -136,9 +133,6 @@
     transition: transform 0.3s ease-in-out;
   }
 
-  .mobile-navbar ul li a svg:hover {
-    transform: rotate(360deg);
-  }
 
   .mobile-navbar ul li a span {
     display: none; /* Hide all span text by default */
