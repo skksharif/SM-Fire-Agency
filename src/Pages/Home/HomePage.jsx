@@ -174,7 +174,7 @@ const HomePage = () => {
               data-aos-easing="ease-in-out"
               data-aos-once="false"
             >
-              <img src={`./smagency-images/HomePage-Images/ck${i + 1}.png`} alt={`Client ${i + 1}`} />
+              <img src={`./smagency-images/HomePage-Images/ck${i+1}.png`} alt={`Client ${i + 1}`} />
               <div className="overlay">Trusted Partner</div>
             </div>
           ))}
