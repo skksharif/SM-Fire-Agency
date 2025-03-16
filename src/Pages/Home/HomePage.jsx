@@ -5,12 +5,14 @@ import Footer from "../Layout/Footer/Footer";
 import { FaUsers, FaProjectDiagram, FaUserTie, FaCalendarAlt } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import "./LandingPage.css";
 
 const images = [
   "./smagency-images/HomePage-Images/fire-11.png",
   "./smagency-images/HomePage-Images/fire-22.png",
   "./smagency-images/HomePage-Images/fire-33.png",
 ];
+
 
 const HomePage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,11 +23,38 @@ const HomePage = () => {
   // Initialize AOS
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Smooth animation duration (1s)
+      duration: 1000, 
       easing: 'ease-in-out',
-      once: true, // Ensures animation happens only once
+      once: true,
     });
   }, []);
+
+  useEffect(() => {
+    let intro = document.querySelector('.intro');
+    let logoSpan = document.querySelectorAll('.logo');
+    
+    setTimeout(() => {
+      logoSpan.forEach((span, idx) => {
+        setTimeout(() => {
+          span.classList.add('active');
+        }, (idx + 1) * 400);
+      });
+      
+      setTimeout(() => {
+        logoSpan.forEach((span, idx) => {
+          setTimeout(() => {
+            span.classList.remove('active');
+            span.classList.add('fade');
+          }, (idx + 1) * 50);
+        });
+      }, 2000);
+      
+      setTimeout(() => {
+        if (intro) intro.style.top = '-100vh';
+      }, 2300);
+    });
+  }, []);
+
 
   const nextSlide = () => setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   const prevSlide = () => setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
@@ -37,6 +66,16 @@ const HomePage = () => {
 
   return (
     <div className='homePage-section'>
+
+      <div className="intro">
+        <h1 className="logo-header">
+          <span className="logo">
+            <img src="./smagency-images/logo.png" alt="Sree Mohith Agency" height={50} width={50} style={{marginRight : "10px"}} />
+          </span>
+          <span className="logo">SM Agency</span>
+        </h1>
+      </div>
+
       <Header />
 
       {/* Carousel Section */}
@@ -67,6 +106,7 @@ const HomePage = () => {
           data-aos="zoom-in"
           data-aos-duration="500"
         >
+          <img src="./smagency-images/logo.png" alt="SM AGENCY" height={100} width={100} style={{display:"block", margin:"auto", marginBottom : "10px" , border : "5px solid red", borderRadius : "50%", boxShadow : "0px 2px 10px 1px gray"}}/>
           Fire Safety Products Dealers, Distributors, Suppliers, Traders, Sales, and Services Provider
         </h1>
 

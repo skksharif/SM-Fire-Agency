@@ -9,6 +9,8 @@ import 'animate.css';
 const Header = () => {
   const location = useLocation();
 
+  const Logo = "./smagency-images/logo.png";
+
   return (
     <div className="header">
       {/* Top navbar for laptops */}
