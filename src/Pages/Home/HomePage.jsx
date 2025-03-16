@@ -1,10 +1,10 @@
-import React from 'react'
-import "./style.css"
-import Header from '../Layout/Header/Header'
-import Footer from "../Layout/Footer/Footer"
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from 'react';
+import "./style.css";
+import Header from '../Layout/Header/Header';
+import Footer from "../Layout/Footer/Footer";
 import { FaUsers, FaProjectDiagram, FaUserTie, FaCalendarAlt } from "react-icons/fa";
-import 'animate.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const images = [
   "./smagency-images/HomePage-Images/fire-11.png",
@@ -12,150 +12,138 @@ const images = [
   "./smagency-images/HomePage-Images/fire-33.png",
 ];
 
-const clients = [
-  { src: "ck2.png", alt: "Our Trusted Partner" },
-  { src: "ck1.png", alt: "Providing Solutions" },
-  { src: "ck3.png", alt: "Innovative Technologies" },
-  { src: "ck4.png", alt: "Committed to Quality" },
-  { src: "ck5.png", alt: "Leading Innovations" },
-  { src: "ck6.png", alt: "Quality Service" },
-  { src: "ck7.png", alt: "Trusted Supplier" },
-  { src: "ck8.png", alt: "Expert Solutions" },
-  { src: "ck9.png", alt: "Trusted in the Industry" },
-  { src: "ck10.png", alt: "Innovation Leaders" },
-  { src: "ck11.png", alt: "Reliable Partners" },
-];
 const HomePage = () => {
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  const statsRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Smooth animation duration (1s)
+      easing: 'ease-in-out',
+      once: true, // Ensures animation happens only once
+    });
+  }, []);
+
+  const nextSlide = () => setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  const prevSlide = () => setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 3000); // Auto-slide every 3 seconds
-    return () => clearInterval(interval); // Cleanup on unmount
+    const interval = setInterval(nextSlide, 3000); 
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <>
-        <Header />
-        <div className="carousel">
-          <div className="carousel-inner">
-            {images.map((img, index) => (
-              <img
+    <div className='homePage-section'>
+      <Header />
+
+      {/* Carousel Section */}
+      <div className="carousel">
+        <div className="carousel-inner">
+          {images.map((img, index) => (
+            <img
               key={index}
               src={img}
               alt={`Slide ${index + 1}`}
-              className={`carousel-img ${index === currentIndex ? "animate__animated animate__fadeIn active" : ""}`}
-              />
-            
-            ))}
-          </div>
+              className={`carousel-img ${index === currentIndex ? "active" : ""}`}
+              data-aos="fade-up"
+            />
+          ))}
         </div>
+      </div>
+      <p className='breaf-text'
+        data-aos="zoom-in"
+        data-aos-duration="300"
+      >
+        Ensuring safety with trusted solutions <span className='diableinMobile'> — Sree Mohith Agency delivers certified fire and safety systems for ultimate protection and peace of mind.</span>
+      </p>
 
-        <div className="certification-box">
-          <div className="cert-content">
-            <img className="cert-img" src="./smagency-images/HomePage-Images/certi.png" alt="Sree Mohith Agency Certificate" />
-            <p className="cert-desc">
+      {/* Stats Section */}
+      <div ref={statsRef} className="stats-section">
+        <h1 
+          className="stats-heading"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+        >
+          Fire Safety Products Dealers, Distributors, Suppliers, Traders, Sales, and Services Provider
+        </h1>
+
+        <div className="stats-container">
+          {[
+            { icon: <FaUsers />, value: "170", text: "Happy Clients" },
+            { icon: <FaProjectDiagram />, value: "395", text: "Project Complete" },
+            { icon: <FaUserTie />, value: "30", text: "No. of Employees" },
+            { icon: <FaCalendarAlt />, value: "15", text: "Years of Service" }
+          ].map((stat, index) => (
+            <div
+              key={index}
+              className="stat-box"
+              data-aos="zoom-in"
+              data-aos-delay={index * 150} // Smooth staggered effect
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              data-aos-once="false"
+            >
+              <p className='stat-icon'>{stat.icon}</p>
+              <h2>{stat.value}</h2>
+              <p>{stat.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Certification Section */}
+      <div className="certification-box">
+        <div className="cert-content">
+          <img 
+            className="cert-img" 
+            src="./smagency-images/HomePage-Images/cert.jpg" 
+            alt="Sree Mohith Agency Certificate" 
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-once="false"
+          />
+          <p className="cert-desc"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-once="false"
+          >
+            <span className='cert-desc-title'>Sree Mohith Agency</span>
               Sree Mohith Agency, an ISO 9001:2015 certified company, is a leading provider of Fire Hydrant Systems, Sprinkler Systems, and Industrial Safety Equipment. 
               The company acts as a Dealer, Distributor, Supplier, Trader, and Service Provider, partnering with reputed manufacturers. With years of experience, 
               Sree Mohith Agency delivers reliable safety solutions that meet industry standards. Their products ensure high levels of safety for commercial and industrial use. 
-              The company is committed to excellence and customer satisfaction.
-            </p>
-          </div>
+              The company is committed to excellence and customer satisfaction.          </p>
         </div>
+      </div>
 
-        <div className="stats-section">
-          <h1 className="stats-heading">
-            Fire Safety Products Dealers, Distributors, Suppliers, Traders, Sales, and Services Provider
-          </h1>
-          <div className="stats-container">
-            <div className="stat-box">
-              <FaUsers className="stat-icon" />
-              <h2>170</h2>
-              <p>Happy Clients</p>
+      {/* Clients Section */}
+      <div className="clients-section">
+        <h1 data-aos="fade-up">Our Trusted Clients</h1>
+        <div className="clients-grid">
+          {[...Array(11)].map((_, i) => (
+            <div 
+              className="client" 
+              key={i}
+              data-aos="flip-left"
+              data-aos-delay={i * 80}
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              data-aos-once="false"
+            >
+              <img src={`./smagency-images/HomePage-Images/ck${i + 1}.png`} alt={`Client ${i + 1}`} />
+              <div className="overlay">Trusted Partner</div>
             </div>
-
-            <div className="stat-box">
-              <FaProjectDiagram className="stat-icon" />
-              <h2>395</h2>
-              <p>Project Complete</p>
-            </div>
-
-            <div className="stat-box">
-              <FaUserTie className="stat-icon" />
-              <h2>30</h2>
-              <p>No. of Employees</p>
-            </div>
-
-            <div className="stat-box">
-              <FaCalendarAlt className="stat-icon" />
-              <h2>15</h2>
-              <p>Years of Service</p>
-            </div>
-          </div>
+          ))}
         </div>
+      </div>
 
-        <div class="clients-section">
-          <h1>Our Trusted Clients</h1>
-          <div class="clients-grid">
-            <div class="client">
-              <img src="./smagency-images/HomePage-Images/ck2.png" alt="Our Trusted Partner" />
-              <div class="overlay">Our Trusted Partner</div>
-            </div>
-            <div class="client">
-              <img src="./smagency-images/HomePage-Images/ck1.png" alt="Providing Solutions" />
-              <div class="overlay">Providing Solutions</div>
-            </div>
-            <div class="client">
-              <img src="./smagency-images/HomePage-Images/ck3.png" alt="Innovative Technologies" />
-              <div class="overlay">Innovative Technologies</div>
-            </div>
-            <div class="client">
-              <img src="./smagency-images/HomePage-Images/ck4.png" alt="Committed to Quality" />
-              <div class="overlay">Committed to Quality</div>
-            </div>
-            <div class="client">
-              <img src="./smagency-images/HomePage-Images/ck5.png" alt="Leading Innovations" />
-              <div class="overlay">Leading Innovations</div>
-            </div>
-            <div class="client">
-              <img src="./smagency-images/HomePage-Images/ck6.png" alt="Quality Service" />
-              <div class="overlay">Quality Service</div>
-            </div>
-            <div class="client">
-              <img src="./smagency-images/HomePage-Images/ck7.png" alt="Trusted Supplier" />
-              <div class="overlay">Trusted Supplier</div>
-            </div>
-            <div class="client">
-              <img src="./smagency-images/HomePage-Images/ck8.png" alt="Expert Solutions" />
-              <div class="overlay">Expert Solutions</div>
-            </div>
-            <div class="client">
-              <img src="./smagency-images/HomePage-Images/ck9.png" alt="Trusted in the Industry" />
-              <div class="overlay">Trusted in the Industry</div>
-            </div>
-            <div class="client">
-              <img src="./smagency-images/HomePage-Images/ck10.png" alt="Innovation Leaders" />
-              <div class="overlay">Innovation Leaders</div>
-            </div>
-            <div class="client">
-              <img src="./smagency-images/HomePage-Images/ck11.png" alt="Reliable Partners" />
-              <div class="overlay">Reliable Partners</div>
-            </div>
-          </div>
-        </div>
+      <Footer />
+    </div>
+  );
+};
 
-
-        <Footer />
-    </>
-  )
-}
-
-export default HomePage
+export default HomePage;

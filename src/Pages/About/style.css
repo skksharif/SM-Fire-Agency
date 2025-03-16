@@ -1,17 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Doto:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Merienda:wght@300..900&display=swap');
+
 /* Reset Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
 /* About Container */
-.aboutPage{
+.aboutPage {
   display: flex;
   justify-content: center;
   align-items: center;  
   min-height: 90vh;
+  background-color: #f5f7fa;
 }
-.about-container {  
+
+.about-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -21,22 +27,25 @@
   gap: 20px;
   padding: 30px;
   border-radius: 10px;
-  position: relative;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.about-desc h1{
+.about-desc h1 {
   font-size: 2.5rem;
-  color: #ff9900;
+  color: #d32f2f;
   text-transform: uppercase;
   font-weight: bolder;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
-.about-desc h3{
+
+.about-desc h3 {
   font-size: 1.5rem;
-  color: #ff6600e0;
+  color: #c21818;
   text-transform: uppercase;
-  font-weight: bolder;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
 }
 
 /* About Image */
@@ -52,14 +61,29 @@
   height: auto;
   border-radius: 50%;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 10px solid red;
 }
-/* About Description */
+
 .about-desc {
   flex: 2;
   max-width: 600px;
   text-align: left;
   font-size: 1.2rem;
   font-weight: 600;
+  color: #37474f;
+}
+
+.about-desc p {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+.about-desc p .quote {
+  color: green;
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 /* Buttons Section - Now at the Bottom */
@@ -68,13 +92,14 @@
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-top: 30px; /* Adjust spacing */
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 /* Buttons */
 .btn {
   text-decoration: none;
-  background: #ff9800;
+  background: #00796b;
   color: white;
   padding: 12px 20px;
   border-radius: 6px;
@@ -84,27 +109,28 @@
 }
 
 .btn:hover {
-  background: #e67e22;
+  background: green;
   transform: translateY(-2px);
+  color: white;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .about-container {
-      flex-direction: column;
-      text-align: center;
-      padding: 20px;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
   }
 
   .about-desc {
-      text-align: center;
+    text-align: center;
   }
-  
+
   .about-img img {
-      max-width: 80%;
+    max-width: 80%;
   }
 
   .abt-btns {
-      flex-direction: column;
+    flex-direction: column;
   }
 }

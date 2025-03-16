@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import "./style.css";
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
-import "animate.css";
 
 const AboutPage = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
+    });
+  }, []);
+
   return (
     <>
       <Header />
       <div className="aboutPage">
         <div className="about-container">
-          <div className="about-img">
+          <div className="about-img" data-aos="fade-right">
             <img src="./smagency-images/AboutPage-Images/logo.png" alt="Company Logo" />
           </div>
-          <div className="about-desc">
+          <div className="about-desc" data-aos="fade-left">
             <h1>About Us</h1>
             <h3>FIRE AND SAFETY SOLUTION</h3>
             <p>
@@ -26,10 +35,10 @@ const AboutPage = () => {
               Their products ensure high levels of safety for commercial and industrial use.
             </p>
             <p>
-              <strong>We are committed to excellence and customer satisfaction.</strong>
+              <strong className='quote'>We are committed to excellence and customer satisfaction.</strong>
             </p>
           </div>
-          <div className="abt-btns">
+          <div className="abt-btns" data-aos="zoom-in">
             <a href="/products" className="btn">Our Products</a>
             <a href="/services" className="btn">Our Services</a>
           </div>
