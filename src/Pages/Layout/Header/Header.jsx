@@ -16,7 +16,7 @@ const Header = () => {
       {/* Top navbar for laptops */}
       <nav className="navbar">
         <div className="logoHeader">
-          <Link to='/'><img src="./smagency-images/HomePage-images/logo.png" alt="SMAGENCY" id="logo" /></Link>
+          <Link to='/'><img src="./smagency-images/logo.png" alt="SMAGENCY" id="logo" /></Link>
         </div>
         <div className={`navContents`}>
           <ul>
