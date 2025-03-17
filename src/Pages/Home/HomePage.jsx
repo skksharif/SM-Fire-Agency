@@ -65,8 +65,9 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className='homePage-section'>
-
+    <>
+      <Header />
+      <div className='homePage-section'>
       <div className="intro">
         <h1 className="logo-header">
           <span className="logo">
@@ -76,7 +77,7 @@ const HomePage = () => {
         </h1>
       </div>
 
-      <Header />
+ 
 
       {/* Carousel Section */}
       <div className="carousel">
@@ -183,6 +184,7 @@ const HomePage = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 
