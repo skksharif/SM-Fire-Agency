@@ -112,9 +112,9 @@ const HomePage = () => {
 
         <div className="stats-container">
           {[
-            { icon: <FaUsers />, value: "170", text: "Happy Clients" },
-            { icon: <FaProjectDiagram />, value: "395", text: "Project Complete" },
-            { icon: <FaUserTie />, value: "30", text: "No. of Employees" },
+            { icon: <FaUsers />, value: "3000+", text: "Happy Clients" },
+            { icon: <FaProjectDiagram />, value: "5000+", text: "Project Complete" },
+            { icon: <FaUserTie />, value: "30+", text: "No. of Employees" },
             { icon: <FaCalendarAlt />, value: "15", text: "Years of Service" }
           ].map((stat, index) => (
             <div

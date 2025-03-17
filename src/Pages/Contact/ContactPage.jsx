@@ -35,7 +35,7 @@ const ContactPage = () => {
               <FaMapMarkerAlt className="icon" />
               <div>
                 <h3>Address</h3>
-                <p>Vishnu College, Bhimavaram</p>
+                <p>Bhimavaram</p>
               </div>
             </div>
 
@@ -49,8 +49,7 @@ const ContactPage = () => {
               <FaPhoneAlt className="icon" />
               <div>
                 <h3>Phone</h3>
-                <p>+91 98 9893 5647</p>
-                <p>+91 96 3434 5678</p>
+                <p>+91 94403 51007</p>
               </div>
             </div>
 
@@ -64,8 +63,7 @@ const ContactPage = () => {
               <MdEmail className="icon" />
               <div>
                 <h3>Email</h3>
-                <p>svecw@gmail.com</p>
-                <p>vishnuspire@gmail.com</p>
+                <p>smagency.ap@gmail.com</p>
               </div>
             </div>
           </div>
@@ -91,7 +89,7 @@ const ContactPage = () => {
               <div
                 className="input-group"
                 data-aos="fade-up"
-                data-aos-duration="800"
+                data-aos-duration="500"
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
                 data-aos-delay="900"
@@ -102,7 +100,7 @@ const ContactPage = () => {
 
               <div className="input-group"
                 data-aos="fade-up"
-                data-aos-duration="800"
+                data-aos-duration="500"
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
                 data-aos-delay="1100"
@@ -114,7 +112,7 @@ const ContactPage = () => {
               <div 
                 className="input-group"
                 data-aos="fade-up"
-                data-aos-duration="800"
+                data-aos-duration="500"
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
                 data-aos-delay="1300"
@@ -125,7 +123,7 @@ const ContactPage = () => {
 
               <div className="input-group"
                 data-aos="fade-up"
-                data-aos-duration="800"
+                data-aos-duration="500"
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
                 data-aos-delay="1500"
@@ -136,7 +134,7 @@ const ContactPage = () => {
 
               <div className="input-group"
                 data-aos="fade-up"
-                data-aos-duration="800"
+                data-aos-duration="500"
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
                 data-aos-delay="1700"
@@ -148,10 +146,10 @@ const ContactPage = () => {
 
               <button type="submit"
                 data-aos="fade-up"
-                data-aos-duration="800"
+                data-aos-duration="500"
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
-                data-aos-delay="1800"
+                data-aos-delay="100"
               >Send Message</button>
             </form>
           </div>

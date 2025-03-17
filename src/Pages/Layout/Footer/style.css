@@ -123,9 +123,14 @@ hr{
         text-align: center;
     }
 
+    .map-container {
+        align-items: start;
+        padding: 0;
+        justify-content: flex-start;
+    }
+
     .footer-image {
         max-width: 80%;
-        margin: auto;
     }
 
     .location-section {
