@@ -1,14 +1,15 @@
-
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 5000;
+}
 .navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-bottom: 0.3px solid #d0d0d0;
   margin-bottom: 10px;
-  position: sticky;
   width: 100%;
-  top: 0;
-  z-index: 5000;
   background-color: white;
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease-in-out;
