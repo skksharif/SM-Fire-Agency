@@ -10,7 +10,7 @@ const Footer = () => {
         {/* Location Section */}
         <div className="location-section">
           <strong>Address:</strong>
-          <p>1234 Main Street, City, State, ZIP, Country</p>
+          <p>Bhimavaram</p>
         </div>
 
         {/* Map Section */}
