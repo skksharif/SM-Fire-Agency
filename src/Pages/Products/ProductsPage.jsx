@@ -2,8 +2,13 @@ import React from 'react';
 import "./style.css";
 import Header from '../Layout/Header/Header';
 import Footer from '../Layout/Footer/Footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ProductsPage = () => {
+
+  AOS.init();
+
   const products = [
     { name: "Sprinklers", image: "./smagency-images/ProductPage-Images/ik13.png" },
     { name: "A B C and B C Dry Powder", image: "./smagency-images/ProductPage-Images/ik1.png" },
@@ -36,14 +41,40 @@ const ProductsPage = () => {
           backgroundImage: `url(${imageCover})`,
         }}
       >
-          <h1>SREE MOHITH AGENCY</h1>
-          <p>Fire Safety / Protection Equipments, Systems</p>
+          <h1
+            className="cover-heading"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="50"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+          >SREE MOHITH AGENCY</h1>
+          <p
+            className="cover-subheading"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true"
+          >Fire Safety / Protection Equipments, Systems</p>
         </div>
 
-        <h1 className='our-products'>OUR PRODUCTS</h1>
+        <h1 className='our-products'
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="70"
+          data-aos-easing="ease-in-out"
+          data-aos-once="true"
+        >OUR PRODUCTS</h1>
         <div className="products-grid">
           {products.map((product, index) => (
-            <div key={index} className="product-card">
+            <div key={index} className="product-card"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay={index * 100}
+              data-aos-easing="ease-in-out"
+              data-aos-once="false"
+            >
               <div className="product-img-container">
                 <img src={product.image} alt={product.name} className="product-image" />
               </div>
